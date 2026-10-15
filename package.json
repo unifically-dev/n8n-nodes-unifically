@@ -1,0 +1,76 @@
+{
+  "name": "n8n-nodes-unifically",
+  "version": "0.1.0",
+  "description": "n8n community node for UnificAlly: AI video, image generation, music and speech (Veo 3.1, Kling, Seedance, Grok Imagine, Nano Banana, Suno, ElevenLabs and 100+ models) through one API key.",
+  "keywords": [
+    "n8n-community-node-package",
+    "n8n",
+    "n8n-node",
+    "unifically",
+    "ai",
+    "ai video",
+    "ai-video",
+    "video generation",
+    "image generation",
+    "text-to-video",
+    "text-to-image",
+    "music generation",
+    "ai music",
+    "text to speech",
+    "veo",
+    "veo 3.1",
+    "kling",
+    "seedance",
+    "nano banana",
+    "suno",
+    "elevenlabs"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/unifically-dev/n8n-nodes-unifically#readme",
+  "bugs": {
+    "url": "https://github.com/unifically-dev/n8n-nodes-unifically/issues"
+  },
+  "author": {
+    "name": "UnificAlly",
+    "email": "contact@unifically.com",
+    "url": "https://unifically.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unifically-dev/n8n-nodes-unifically.git"
+  },
+  "engines": {
+    "node": ">=20.15"
+  },
+  "scripts": {
+    "build": "n8n-node build",
+    "build:watch": "tsc --watch",
+    "lint": "n8n-node lint",
+    "lint:fix": "n8n-node lint --fix",
+    "test": "npm run build && node test/node.test.js",
+    "prepublishOnly": "npm run lint && npm run build"
+  },
+  "files": [
+    "dist",
+    "!dist/tsconfig.tsbuildinfo"
+  ],
+  "n8n": {
+    "n8nNodesApiVersion": 1,
+    "strict": true,
+    "credentials": [
+      "dist/credentials/UnificallyApi.credentials.js"
+    ],
+    "nodes": [
+      "dist/nodes/Unifically/Unifically.node.js"
+    ]
+  },
+  "devDependencies": {
+    "@n8n/node-cli": "^0.52.4",
+    "eslint": "^9.29.0",
+    "n8n-workflow": "*",
+    "typescript": "^5.5.0"
+  },
+  "peerDependencies": {
+    "n8n-workflow": "*"
+  }
+}
